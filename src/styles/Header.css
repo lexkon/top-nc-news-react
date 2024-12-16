@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+header img {
+    width: 20%;
+}
+
+#user-avatar {
+    border-radius: 50%;
+}
