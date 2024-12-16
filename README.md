@@ -1,3 +1,3 @@
 # Top NC News
 
-## A React application to the [top-nc-news](https://github.com/lexkon/top-nc-news) backend
+A React application built using the [top-nc-news](https://github.com/lexkon/top-nc-news) API.
