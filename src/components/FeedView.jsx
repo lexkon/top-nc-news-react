@@ -9,23 +9,22 @@ export const FeedView = () => {
     const [articles, setArticles] = useState([])
     const [isLoading, setLoading] = useState(true)
 
-    useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                setLoading(true)
-                const { articles } = await fetchAllArticles()
-                setArticles(articles)
-            } catch (error) {
-                console.log(error)
-            }
-            setLoading(false)
+    const fetchArticles = async () => {
+        try {
+            setLoading(true)
+            const { articles } = await fetchAllArticles()
+            setArticles(articles)
+        } catch (error) {
+            console.log(error)
         }
+        setLoading(false)
+    }
+    useEffect(() => {
         fetchArticles()
     }, [])
 
     return (
         <section className="feed-view">
-
             {isLoading
                 ? Array.from({ length: 10 }).map((_, index) => (
                     <SkeletonCard key={index} />
@@ -35,6 +34,5 @@ export const FeedView = () => {
                 })
             }
         </section>
-
     )
 }
