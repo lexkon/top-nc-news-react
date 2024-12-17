@@ -14,3 +14,12 @@ export const fetchAllArticles = async () => {
     }
 }
 
+export const fetchArticleById = async (article_id) => {
+    const { data: { article } } = await api.get(`/articles/${article_id}`)
+
+    try {
+        return article
+    } catch (error) {
+        return error
+    }
+}
