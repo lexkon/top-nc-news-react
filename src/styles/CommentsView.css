@@ -1,0 +1,8 @@
+.comment-area .comment-author {
+    padding: 0 0 10px;
+    text-align: right;
+}
+
+.comment-area .comment-body {
+    padding: 50px 0 10px;
+}
