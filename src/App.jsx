@@ -1,8 +1,12 @@
-function App() {
+import { Header } from "./components/Header"
+import { FeedView } from "./components/FeedView"
+import './styles/App.css'
 
+function App() {
   return (
     <>
-      <p>Coming soon</p>
+      <Header />
+      <FeedView />
     </>
   )
 }
