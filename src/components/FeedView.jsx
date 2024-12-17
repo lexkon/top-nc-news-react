@@ -3,6 +3,7 @@ import { fetchAllArticles } from '../../api'
 import { ArticleCard } from './ArticleCard'
 import { SkeletonCard } from './SkeletonCard'
 import 'react-loading-skeleton/dist/skeleton.css'
+import '../styles/FeedView.css'
 
 export const FeedView = () => {
     const [articles, setArticles] = useState([])
@@ -23,7 +24,8 @@ export const FeedView = () => {
     }, [])
 
     return (
-        <>
+        <section className="feed-view">
+
             {isLoading
                 ? Array.from({ length: 10 }).map((_, index) => (
                     <SkeletonCard key={index} />
@@ -32,6 +34,7 @@ export const FeedView = () => {
                     return <ArticleCard key={index} article={article} />
                 })
             }
-        </>
+        </section>
+
     )
 }

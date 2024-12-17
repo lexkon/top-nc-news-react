@@ -1,0 +1,12 @@
+.feed-view {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: auto;
+}
+
+@media (max-width: 480px) {
+    .feed-view {
+        grid-template-columns: 1fr;
+    }
+}
