@@ -1,5 +1,6 @@
 import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
+import { CommentsView } from './CommentsView'
 import { fetchArticleById } from '../../api'
 import { SkeletonCard } from './SkeletonCard'
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -16,7 +17,7 @@ export const ArticleView = () => {
             const article = await fetchArticleById(article_id)
             setArticle(article)
         } catch (error) {
-            console.log(error)
+            return error
         }
         setLoading(false)
     }
@@ -37,6 +38,8 @@ export const ArticleView = () => {
                         <p>{article.body}</p>
                     </>
                 )}
+            <CommentsView article_id={article_id} />
         </div>
+
     )
 }

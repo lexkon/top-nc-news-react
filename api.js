@@ -23,3 +23,13 @@ export const fetchArticleById = async (article_id) => {
         return error
     }
 }
+
+export const fetchComments = async (article_id) => {
+    const { data: { comments } } = await api.get(`/articles/${article_id}/comments`)
+
+    try {
+        return comments
+    } catch (error) {
+        return error
+    }
+}
