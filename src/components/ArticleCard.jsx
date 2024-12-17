@@ -9,6 +9,8 @@ export const ArticleCard = ({ article }) => {
                 backgroundPosition: 'center',
             }}>
             <h1>{article.title}</h1>
+            <h3>{article.author}</h3>
+            <p>{article.topic}</p>
         </div >
     )
 }
