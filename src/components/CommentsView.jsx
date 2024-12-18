@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
-import { fetchComments } from "../../api";
+import { getComments } from "../../api";
 import { SkeletonCard } from './SkeletonCard'
 import '../styles/CommentsView.css'
 
 export const CommentsView = ({ article_id }) => {
     const [comments, setComments] = useState([])
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
 
-    const fetchAllComments = async () => {
+    const getAllComments = async () => {
         try {
-            setLoading(true)
-            const comments = await fetchComments(article_id)
+            setIsLoading(true)
+            const comments = await getComments(article_id)
             setComments(comments)
         } catch (error) {
             return error
         }
-        setLoading(false)
+        setIsLoading(false)
     }
 
     useEffect(() => {
-        fetchAllComments()
+        getAllComments()
     }, [article_id])
 
     const renderCommentContent = () => {

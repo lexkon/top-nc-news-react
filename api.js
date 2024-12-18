@@ -4,32 +4,27 @@ const api = axios.create({
     baseURL: 'https://top-nc-news.onrender.com/api'
 })
 
-export const fetchAllArticles = async () => {
+export const getAllArticles = async () => {
     const { data: articles } = await api.get('/articles')
-
-    try {
-        return articles
-    } catch (error) {
-        return error
-    }
+    return articles
 }
 
-export const fetchArticleById = async (article_id) => {
+export const getArticleById = async (article_id) => {
     const { data: { article } } = await api.get(`/articles/${article_id}`)
-
-    try {
-        return article
-    } catch (error) {
-        return error
-    }
+    return article
 }
 
-export const fetchComments = async (article_id) => {
+export const getComments = async (article_id) => {
     const { data: { comments } } = await api.get(`/articles/${article_id}/comments`)
+    return comments
+}
 
-    try {
-        return comments
-    } catch (error) {
-        return error
-    }
+export const patchArticleVotes = async (article_id, newVote) => {
+    const { data: { article } } = await api.get(
+        `/articles/${article_id}`,
+        {
+            inc_votes: newVote
+        }
+    )
+    return article
 }
