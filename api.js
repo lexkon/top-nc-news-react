@@ -20,7 +20,7 @@ export const getComments = async (article_id) => {
 }
 
 export const patchArticleVotes = async (article_id, newVote) => {
-    const { data: { article } } = await api.get(
+    const { data: { article } } = await api.patch(
         `/articles/${article_id}`,
         {
             inc_votes: newVote
