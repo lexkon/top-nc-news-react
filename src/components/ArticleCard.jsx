@@ -1,6 +1,6 @@
 import '../styles/ArticleCard.css'
 import { Link } from 'react-router'
-import { toTitleCase } from '../utils/utils'
+import { toTitleCase } from '../utils'
 
 export const ArticleCard = ({ article }) => {
     return (
