@@ -4,7 +4,7 @@ import { CommentsView } from './CommentsView'
 import { Votes } from './Votes'
 import { SkeletonCard } from './SkeletonCard'
 import { getArticleById } from '../../api'
-import { toTitleCase } from '../utils'
+import { toCapitalise, toTitleCase } from '../utils'
 import 'react-loading-skeleton/dist/skeleton.css'
 import '../styles/ArticleView.css'
 
@@ -37,7 +37,7 @@ export const ArticleView = () => {
                 : (
                     <>
                         <h1>{toTitleCase(article.title)}</h1>
-                        <h3>by {article.author} ⋅ {article.topic}</h3>
+                        <h3>by {article.author} ⋅ {toCapitalise(article.topic)}</h3>
                         <img src={article.article_img_url} />
                         <Votes votes={article.votes} article_id={article_id} />
                         <p>{article.body}</p>

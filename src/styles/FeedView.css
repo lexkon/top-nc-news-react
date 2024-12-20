@@ -1,7 +1,7 @@
 .feed-view {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 16px 32px;
     margin: auto;
 }
 

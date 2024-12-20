@@ -4,7 +4,6 @@
     width: 500px;
     text-align: left;
     max-width: 80%;
-
 }
 
 .article-view h1 {
@@ -13,6 +12,10 @@
 
 .article-view h3 {
     color: rgb(91, 91, 91);
+}
+
+img {
+    border-radius: 15px;
 }
 
 img,

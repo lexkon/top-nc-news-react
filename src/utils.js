@@ -1,5 +1,5 @@
-export const formatDate = (inputDate) => {
-
+export const toCapitalise = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 export const toTitleCase = (titleString) => {
