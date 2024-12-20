@@ -28,3 +28,11 @@ export const patchArticleVotes = async (article_id, newVote) => {
     )
     return article
 }
+
+export const postArticleComment = async (article_id, newCommentToPost) => {
+    const { data: { newComment } } = await api.post(
+        `/articles/${article_id}/comments`,
+        newCommentToPost
+    )
+    return newComment
+}
