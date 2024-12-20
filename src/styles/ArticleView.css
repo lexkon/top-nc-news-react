@@ -1,9 +1,14 @@
+.article-view {
+    margin-bottom: 50px;
+}
+
 .article-view p {
     margin: auto;
     color: black;
     width: 500px;
     text-align: left;
     max-width: 80%;
+    margin-bottom: 20px;
 }
 
 .article-view h1 {
@@ -20,7 +25,7 @@ img {
 
 img,
 Skeleton {
-    max-width: 100%;
+    max-width: 80%;
     max-height: 500px;
 }
 
@@ -30,7 +35,7 @@ Skeleton {
     justify-content: center;
     gap: 10px;
     width: 50%;
-    margin: 20px 50px 0;
+    margin: 20px 0 30px 0;
 }
 
 .votes-container button {

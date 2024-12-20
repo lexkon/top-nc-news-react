@@ -48,6 +48,7 @@ export const CommentsView = ({ article_id }) => {
             <>
                 <h3>Add your voice to the conversation</h3>
                 <NewCommentForm article_id={article_id} addComment={addComment} />
+                <br />
                 {
                     comments.map((comment, index) => (
                         <div className='comment-area' key={comment.id || index}>
@@ -64,7 +65,7 @@ export const CommentsView = ({ article_id }) => {
 
     return (
         <section className='comments-view' >
-            <hr style={{ maxWidth: '250px' }} />
+            <hr style={{ maxWidth: '350px' }} />
             <h2>Comments</h2>
             <div className="comments-list">
                 {renderComments()}

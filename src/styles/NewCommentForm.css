@@ -1,3 +1,7 @@
+.new-comment-form {
+    padding-bottom: 20px;
+}
+
 .new-comment-form form {
     display: flex;
     gap: 10px;
