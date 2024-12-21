@@ -19,8 +19,9 @@
     color: rgb(91, 91, 91);
 }
 
-img {
+.article-view img {
     border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(57, 57, 57, 0.624);
 }
 
 img,

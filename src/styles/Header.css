@@ -15,4 +15,5 @@ header img {
 
 #user-avatar {
     border-radius: 50%;
+    box-shadow: 2px 7px 10px rgb(57, 57, 57);
 }
