@@ -8,7 +8,7 @@ export const ArticleCard = ({ article }) => {
             <div className="article-card"
                 style={{
                     backgroundImage: `
-                        linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+                        linear-gradient(to bottom, rgba(168, 168, 168, 0.1), rgba(22, 22, 22, 0.7)),
                     url(${article.article_img_url})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
