@@ -6,23 +6,31 @@ on:
             - main
 
 jobs:
-    deploy:
+    build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js 18.x
-                uses: actions/setup-node@v4
-                with: node-version: 18
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20
+                cache: "npm"
+
+            - name: Install Netlify
+              run: npm install netlify-cli@latest -g
+
             - name: Install Dependencies
-                run: npm install
-            - name: Build Project 
-                run: npm run build
+              run: npm ci
+
+            - name: Build Project
+              run: npm run build
+
             - name: Deploy to Netlify
-                uses: nwtgck/actions-netlify@v3.0
-                with:
-                publish-dir: './dist'
-                production-branch: main
-                github-token: ${{ secrets.GITHUB_TOKEN }}
-                env:
-                NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-                NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+              id: netlify_deploy
+              run: |
+                netlify deploy \
+                  --dir dist \
+                  --site ${{ secrets.NETLIFY_SITE_ID }} \
+                  --auth ${{ secrets.NETLIFY_API_TOKEN }}
